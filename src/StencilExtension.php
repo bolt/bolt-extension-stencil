@@ -4,7 +4,12 @@ namespace Bolt\Extension\YourName\Stencil;
 
 use Bolt\Events\ControllerEvents;
 use Bolt\Extension\AuthorName\Stencil\Provider\StencilServiceProvider;
+use Bolt\Extension\AuthorName\Stencil\Storage\Entity;
+use Bolt\Extension\AuthorName\Stencil\Storage\Repository;
+use Bolt\Extension\AuthorName\Stencil\Storage\Schema;
+use Bolt\Extension\DatabaseSchemaTrait;
 use Bolt\Extension\SimpleExtension;
+use Bolt\Extension\StorageTrait;
 use Pimple as Container;
 use Silex\Application;
 use Silex\ControllerCollection;
@@ -146,15 +151,31 @@ class StencilExtension extends SimpleExtension
     // Extension Database Functions.
     ///////////////////////////////////////////////////////////////////////////
 
+    use DatabaseSchemaTrait;
+
     /**
      * {@inheritdoc}
      */
     protected function registerExtensionTables()
     {
-        $app = $this->getContainer();
-
         return [
-            'stencil' => $app['stencil.schema.table']['stencil'],
+            'stencil' => Schema\Table\Stencil::class,
+        ];
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // Extension Storage Functions.
+    ///////////////////////////////////////////////////////////////////////////
+
+    use StorageTrait;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function registerRepositoryMappings()
+    {
+        return [
+            'stencil' => [Entity\Stencil::class => Repository\Stencil::class],
         ];
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bolt\Extension\YourName\Stencil;
+namespace Bolt\Extension\AuthorName\Stencil;
 
 use Bolt\Events\ControllerEvents;
 use Bolt\Extension\AuthorName\Stencil\Provider\StencilServiceProvider;

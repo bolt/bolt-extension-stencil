@@ -22,17 +22,17 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Bolt\\Extension\\YourName\\ExtensionName\\": "src"
+            "Bolt\\Extension\\AuthorName\\Stencil\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Bolt\\Extension\\YourName\\ExtensionName\\Tests\\": "tests",
+            "Bolt\\Extension\\AuthorName\\Stencil\\Tests\\": "tests",
             "Bolt\\Tests\\": "vendor/bolt/bolt/tests/phpunit/unit/"
         }
     },
     "extra": {
         "bolt-assets": "web",
-        "bolt-class": "Bolt\\Extension\\YourName\\ExtensionName\\StencilExtension"
+        "bolt-class": "Bolt\\Extension\\AuthorName\\Stencil\\StencilExtension"
     }
 }

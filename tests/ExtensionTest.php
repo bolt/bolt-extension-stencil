@@ -1,9 +1,9 @@
 <?php
 
-namespace Bolt\Extension\YourName\ExtensionName\Tests;
+namespace Bolt\Extension\AuthorName\ExtensionName\Tests;
 
 use Bolt\Tests\BoltUnitTest;
-use Bolt\Extension\YourName\ExtensionName\StencilExtension;
+use Bolt\Extension\AuthorName\ExtensionName\StencilExtension;
 
 /**
  * StencilExtension testing class.
